@@ -12,20 +12,20 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 
 @RunWith(Arquillian.class)
-public class CalculadoraTest {
+public class CalculatorTest {
 
 	@Deployment
 	public static JavaArchive createDeployment() {
 		return ShrinkWrap.create(JavaArchive.class)
-				.addClasses(CalculadoraRemote.class, Calculadora.class)
+				.addClasses(CalculatorRemote.class, Calculator.class)
 				.addAsManifestResource(EmptyAsset.INSTANCE, "beans.xml");
 	}
 
 	@EJB
-	CalculadoraRemote calculadora;
+	CalculatorRemote calculadora;
 
 	@Test
-	public void should_create_greeting() {
+	public void shouldCalculateOnePlusOneAndReturnTwo() {
 		Assert.assertEquals(2, calculadora.soma(1, 1));
 	}
 
