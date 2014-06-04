@@ -44,11 +44,11 @@ public class SalutationMDBServlet extends HttpServlet {
 	}
 
 	private void sendMessage() {
-		try {
+		try (Connection connection = queueConnectionFactory.createConnection();
+				Session session = connection.createSession(false,
+						Session.AUTO_ACKNOWLEDGE);) {
+			
 			String message = "Salutation generated";
-			Connection connection = queueConnectionFactory.createConnection();
-			Session session = connection.createSession(false,
-					Session.AUTO_ACKNOWLEDGE);
 			MessageProducer messageProducer = (MessageProducer) session
 					.createProducer(queue);
 			TextMessage textMessage = session.createTextMessage();
