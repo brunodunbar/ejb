@@ -45,6 +45,9 @@
 				<groupId>org.wildfly.plugins</groupId>
 				<artifactId>wildfly-maven-plugin</artifactId>
 				<version>1.0.1.Final</version>
+				<configuration>
+					<server-config>standalone-full.xml</server-config>
+				</configuration>
 			</plugin>
 
 		</plugins>
