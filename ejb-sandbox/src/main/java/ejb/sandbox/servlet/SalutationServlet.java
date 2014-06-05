@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import ejb.sandbox.Salutation;
+import ejb.sandbox.SalutationBean;
 
 @WebServlet(urlPatterns = { "/SalutationServlet" })
 public class SalutationServlet extends HttpServlet {
@@ -18,7 +18,7 @@ public class SalutationServlet extends HttpServlet {
 	private static final long serialVersionUID = -5034481483428435424L;
 
 	@EJB
-	private Salutation salutation;
+	private SalutationBean salutation;
 
 	protected void processRequest(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {

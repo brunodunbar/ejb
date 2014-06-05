@@ -3,7 +3,7 @@ package ejb.sandbox;
 import javax.ejb.Stateless;
 
 @Stateless
-public class Salutation {
+public class SalutationBean {
 	public String getFormalSalutation(String name) {
 		return "Dear " + name;
 	}

@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import ejb.sandbox.Salutation;
+import ejb.sandbox.SalutationBean;
 
 @WebServlet(urlPatterns = { "/SalutationJNDIServlet" })
 public class SalutationJNDIServlet extends HttpServlet {
@@ -39,10 +39,10 @@ public class SalutationJNDIServlet extends HttpServlet {
 		}
 	}
 
-	private Salutation getSalutation() {
+	private SalutationBean getSalutation() {
 		try {
 			Context context = new InitialContext();
-			return (Salutation) context
+			return (SalutationBean) context
 					.lookup("java:global/ejb-sandbox/Salutation");
 		} catch (Exception e) {
 			e.printStackTrace();

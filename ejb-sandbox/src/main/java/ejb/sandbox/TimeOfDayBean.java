@@ -5,7 +5,7 @@ import java.util.Calendar;
 import javax.ejb.Singleton;
 
 @Singleton
-public class TimeOfDay {
+public class TimeOfDayBean {
 	private static final String DATE_TIME = "yyyy-MM-dd HH:mm:ss";
 
 	public String timeOfDay() {
